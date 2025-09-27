@@ -12,4 +12,6 @@ link_libraries(${GTK_LIBRARIES})
 include_directories(${WebkitGTK_INCLUDE_DIRS})
 link_libraries(${WebkitGTK_LIBRARIES})
 
-add_executable(${PROJECT_NAME} src/copilot.c)
+FILE(GLOB_RECURSE sources src/*.c)
+
+add_executable(${PROJECT_NAME} ${sources})
