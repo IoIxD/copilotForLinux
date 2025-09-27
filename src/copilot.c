@@ -43,8 +43,13 @@ static void setup_webview() {
   GdkMonitor *monitor = GDK_MONITOR(g_list_model_get_object(monitors, 0));
   gdk_monitor_get_geometry(monitor, &workarea);
 
-  gtk_window_set_default_size(GTK_WINDOW(window), workarea.width * 0.3,
-                              workarea.height * 0.9);
+  int winWidth = workarea.width * 0.3;
+  if (winWidth <= 300) {
+    winWidth = 300;
+  }
+
+  gtk_window_set_default_size(GTK_WINDOW(window), winWidth,
+                              workarea.height * 0.95);
 
   WebKitWebView *webView = WEBKIT_WEB_VIEW(webkit_web_view_new());
 
