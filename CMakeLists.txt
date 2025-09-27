@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(copilotButton LANGUAGES C)
+project(copilotForLinux LANGUAGES C)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
